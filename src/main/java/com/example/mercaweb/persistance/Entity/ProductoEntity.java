@@ -15,9 +15,9 @@ import lombok.Setter;
 public class ProductoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    @Column(name = "nombres")
-    private String name;
+    private Integer id;
+
+    private String nombres;
     private String descripcion;
     private Double precio;
     private String foto;
