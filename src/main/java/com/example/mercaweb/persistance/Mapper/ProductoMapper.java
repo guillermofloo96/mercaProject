@@ -10,8 +10,8 @@ import org.mapstruct.Mapping;
 public interface ProductoMapper {
 
     @Mapping(source = "id",  target = "id")
-    @Mapping(source = "nombre", target = "nombre")
-    @Mapping(source = "descrip", target = "descrip")
+    @Mapping(source = "nombres", target = "nombres")
+    @Mapping(source = "descripcion", target = "descripcion")
     @Mapping(source = "precio", target = "precio")
     ProductoPojo productoPojo(ProductoEntity productoEntity);
     @InheritInverseConfiguration
