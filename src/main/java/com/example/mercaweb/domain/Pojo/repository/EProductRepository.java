@@ -5,7 +5,7 @@ import com.example.mercaweb.domain.Pojo.ProductoPojo;
 import java.util.List;
 import java.util.Optional;
 
-public interface eProductRepository {
+public interface EProductRepository {
 
     List<ProductoPojo> getAll();
 

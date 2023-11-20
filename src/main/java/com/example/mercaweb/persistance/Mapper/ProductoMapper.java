@@ -6,6 +6,9 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+import java.util.List;
+import java.util.ListResourceBundle;
+
 @Mapper(componentModel = "spring")
 public interface ProductoMapper {
 
@@ -13,7 +16,8 @@ public interface ProductoMapper {
     @Mapping(source = "nombres", target = "nombres")
     @Mapping(source = "descripcion", target = "descripcion")
     @Mapping(source = "precio", target = "precio")
-    ProductoPojo productoPojo(ProductoEntity productoEntity);
+    ProductoPojo toproductoPojo(ProductoEntity productoEntity);
     @InheritInverseConfiguration
     ProductoEntity productoEmtity(ProductoPojo productoPojo);
+    List<ProductoPojo> toProductoPojo(List<ProductoEntity> productoEntityList);
 }
