@@ -2,6 +2,7 @@ package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
 import com.example.mercaweb.domain.Pojo.repository.EProductRepository;
+import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import com.example.mercaweb.persistance.Mapper.ProductoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,16 +28,27 @@ public class ProductRepository implements EProductRepository {
 
     @Override
     public Optional<ProductoPojo> getProducto(Integer id) {
-        return Optional.empty();
+    return crudProductRepository.findById(id)
+            .map(productoMapper::toproductoPojo);
+
+    /*
+    crudProductRepository.findById(id)
+            .map(productoEntity ->productoMapper.toproductoPojo(productoEntity));    lamba
+     */
+        /*
+        crudProductRepository.findById(id)
+            .map(productoMapper::toproductoPojo);  metodo por referencia
+         */
     }
 
     @Override
     public ProductoPojo save(ProductoPojo productoPojo) {
-        return null;
+        ProductoEntity productoEntity= productoMapper.productoEmtity(productoPojo);
+        return productoMapper.toproductoPojo(crudProductRepository.save(productoEntity));
     }
 
     @Override
     public void delete(Integer idProducto) {
-
+    crudProductRepository.deleteById(idProducto);
     }
 }
