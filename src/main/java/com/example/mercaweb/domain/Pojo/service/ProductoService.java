@@ -1,30 +1,46 @@
 package com.example.mercaweb.domain.Pojo.service;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.Pojo.repository.IProductRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@RequiredArgsConstructor
 @Service
 public class ProductoService implements IProductoService{
+
+    /*
+    repository de Producto
+     */
+
+    private final IProductRepository iProductRepository;
     @Override
     public List<ProductoPojo> getAll() {
-        return null;
+
+        return  iProductRepository.getAll();
     }
 
     @Override
     public Optional<ProductoPojo> getProducto(Integer id) {
-        return Optional.empty();
+
+        return iProductRepository.getProducto(id);
     }
 
     @Override
     public ProductoPojo save(ProductoPojo productoPojo) {
-        return null;
+        return iProductRepository.save(productoPojo);
     }
 
     @Override
     public boolean delete(Integer idProducto) {
-        return false;
+        try{
+            iProductRepository.delete(idProducto);
+            return true;
+        }catch (Exception e){
+            return false;
+        }
     }
 }
