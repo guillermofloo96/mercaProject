@@ -32,14 +32,25 @@ public class ProductoController {
      */
     }
 
+    @PostMapping
     public ResponseEntity<ProductoPojo> save(@RequestBody  ProductoPojo prodcutoNew){
 
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(iProductoService.save(prodcutoNew));
 
         }catch (Exception e){
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(null);
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
         }
+
+    }
+    @PutMapping
+    public ResponseEntity<ProductoPojo> update(@RequestBody  ProductoPojo productoPojoUpdate){
+    return ResponseEntity.status(HttpStatus.OK).body(iProductoService.save(productoPojoUpdate));
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public ResponseEntity<Boolean> delete(@PathVariable Integer id){
+    return new ResponseEntity<>(this.iProductoService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
 
     }
 
