@@ -27,6 +27,11 @@ public class ProductoController {
     return ResponseEntity.of(iProductoService.getProducto(id));
 
 
+    /*
+        @GetMapping(path = "/{id}")
+    public ResponseEntity<ProductoPojo> getProducto(@PathVariable Integer id){
+    return ResponseEntity.of(iProductoService.getProducto(id));
+     */
     }
 
 
