@@ -1,4 +1,4 @@
-package com.example.mercaweb.domain.Pojo.service;
+package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
 

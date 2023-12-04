@@ -1,14 +1,16 @@
 package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
-import com.example.mercaweb.domain.Pojo.repository.IProductRepository;
+import com.example.mercaweb.domain.repository.IProductRepository;
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import com.example.mercaweb.persistance.Mapper.ProductoMapper;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
 @RequiredArgsConstructor
+@Repository
 public class ProductRepository implements IProductRepository {
 
     /*

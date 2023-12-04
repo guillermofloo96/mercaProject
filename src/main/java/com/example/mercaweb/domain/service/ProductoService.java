@@ -1,7 +1,8 @@
-package com.example.mercaweb.domain.Pojo.service;
+package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
-import com.example.mercaweb.domain.Pojo.repository.IProductRepository;
+
+import com.example.mercaweb.domain.repository.IProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +17,9 @@ public class ProductoService implements IProductoService{
     repository de Producto
      */
 
+    /**
+     *
+     */
     private final IProductRepository iProductRepository;
     @Override
     public List<ProductoPojo> getAll() {

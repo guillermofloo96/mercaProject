@@ -1,7 +1,7 @@
 package com.example.mercaweb.controller;
 
 import com.example.mercaweb.domain.Pojo.ProductoPojo;
-import com.example.mercaweb.domain.Pojo.service.IProductoService;
+import com.example.mercaweb.domain.service.IProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

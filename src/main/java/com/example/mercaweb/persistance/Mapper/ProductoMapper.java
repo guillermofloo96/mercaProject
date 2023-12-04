@@ -7,7 +7,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
 import java.util.List;
-import java.util.ListResourceBundle;
 
 @Mapper(componentModel = "spring")
 public interface ProductoMapper {
