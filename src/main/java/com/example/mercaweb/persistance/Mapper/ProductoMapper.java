@@ -16,8 +16,11 @@ public interface ProductoMapper {
     @Mapping(source = "nombres", target = "nombres")
     @Mapping(source = "descripcion", target = "descripcion")
     @Mapping(source = "precio", target = "precio")
-    ProductoPojo toproductoPojo(ProductoEntity productoEntity);
-    @InheritInverseConfiguration
+    @Mapping(source = "foto", target = "foto")
     ProductoEntity productoEmtity(ProductoPojo productoPojo);
+
+    @InheritInverseConfiguration
+    ProductoPojo toproductoPojo(ProductoEntity productoEntity);
+
     List<ProductoPojo> toProductoPojo(List<ProductoEntity> productoEntityList);
 }

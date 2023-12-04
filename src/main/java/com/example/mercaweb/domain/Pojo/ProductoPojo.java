@@ -8,8 +8,8 @@ import lombok.Setter;
 public class ProductoPojo {
 
     private Integer id;
-    private String name;
-    private String descrip;
+    private String nombres;
+    private String descripcion;
     private Double precio;
     private String foto;
 

@@ -16,10 +16,13 @@ public class ProductoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
+    @Column(name = "nombres")
     private String nombres;
+    @Column(name = "descripcion")
     private String descripcion;
+    @Column(name = "precio")
     private Double precio;
+    @Column(name = "foto")
     private String foto;
 
 }
