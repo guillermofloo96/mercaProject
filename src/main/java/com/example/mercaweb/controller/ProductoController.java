@@ -60,7 +60,7 @@ devueve una marca coche
      */
     @PutMapping
     public ResponseEntity<ProductoPojo> update(@RequestBody  ProductoPojo productoPojoUpdate){
-    return ResponseEntity.status(HttpStatus.OK).body(iProductoService.save(productoPojoUpdate));
+    return ResponseEntity.of(iProductoService.update(productoPojoUpdate));
     }
 
     /*

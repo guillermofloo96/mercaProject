@@ -39,12 +39,19 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
+    public Optional<ProductoPojo> update(ProductoPojo productoPojo) {
+        if(iProductRepository.getProducto(productoPojo.getId()).isEmpty()){
+            return Optional.empty();
+        }
+        return Optional.of(iProductRepository.save(productoPojo));
+    }
+
+    @Override
     public boolean delete(Integer idProducto) {
-        try{
-            iProductRepository.delete(idProducto);
-            return true;
-        }catch (Exception e){
+        if(iProductRepository.getProducto(idProducto).isEmpty()){
             return false;
         }
+        iProductRepository.delete(idProducto);
+        return true;
     }
 }

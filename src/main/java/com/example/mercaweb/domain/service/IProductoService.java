@@ -12,5 +12,7 @@ public interface IProductoService {
     Optional<ProductoPojo> getProducto(Integer id);
     ProductoPojo save(ProductoPojo productoPojo);
 
+    Optional<ProductoPojo> update(ProductoPojo productoPojo);
+
     boolean delete(Integer idProducto);
 }
