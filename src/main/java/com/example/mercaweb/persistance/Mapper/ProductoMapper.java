@@ -1,6 +1,6 @@
 package com.example.mercaweb.persistance.Mapper;
 
-import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
@@ -16,10 +16,10 @@ public interface ProductoMapper {
     @Mapping(source = "descripcion", target = "descripcion")
     @Mapping(source = "precio", target = "precio")
     @Mapping(source = "foto", target = "foto")
-    ProductoEntity productoEmtity(ProductoPojo productoPojo);
+    ProductoEntity productoEmtity(ProductoDto productoDto);
 
     @InheritInverseConfiguration
-    ProductoPojo toproductoPojo(ProductoEntity productoEntity);
+    ProductoDto toproductoPojo(ProductoEntity productoEntity);
 
-    List<ProductoPojo> toProductoPojo(List<ProductoEntity> productoEntityList);
+    List<ProductoDto> toProductoPojo(List<ProductoEntity> productoEntityList);
 }

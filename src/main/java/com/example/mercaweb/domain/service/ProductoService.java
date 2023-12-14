@@ -1,6 +1,6 @@
 package com.example.mercaweb.domain.service;
 
-import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.dto.ProductoDto;
 
 import com.example.mercaweb.domain.repository.IProductRepository;
 import lombok.RequiredArgsConstructor;
@@ -22,28 +22,28 @@ public class ProductoService implements IProductoService{
      */
     private final IProductRepository iProductRepository;
     @Override
-    public List<ProductoPojo> getAll() {
+    public List<ProductoDto> getAll() {
 
         return  iProductRepository.getAll();
     }
 
     @Override
-    public Optional<ProductoPojo> getProducto(Integer id) {
+    public Optional<ProductoDto> getProducto(Integer id) {
 
         return iProductRepository.getProducto(id);
     }
 
     @Override
-    public ProductoPojo save(ProductoPojo productoPojo) {
-        return iProductRepository.save(productoPojo);
+    public ProductoDto save(ProductoDto productoDto) {
+        return iProductRepository.save(productoDto);
     }
 
     @Override
-    public Optional<ProductoPojo> update(ProductoPojo productoPojo) {
-        if(iProductRepository.getProducto(productoPojo.getId()).isEmpty()){
+    public Optional<ProductoDto> update(ProductoDto productoDto) {
+        if(iProductRepository.getProducto(productoDto.getId()).isEmpty()){
             return Optional.empty();
         }
-        return Optional.of(iProductRepository.save(productoPojo));
+        return Optional.of(iProductRepository.save(productoDto));
     }
 
     @Override

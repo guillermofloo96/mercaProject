@@ -1,6 +1,6 @@
 package com.example.mercaweb.domain.repository;
 
-import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.dto.ProductoDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -8,10 +8,10 @@ import java.util.Optional;
 public interface IProductRepository {
 
 
-    List<ProductoPojo> getAll();
+    List<ProductoDto> getAll();
 
-    Optional<ProductoPojo> getProducto(Integer id);
-    ProductoPojo save(ProductoPojo productoPojo);
+    Optional<ProductoDto> getProducto(Integer id);
+    ProductoDto save(ProductoDto productoDto);
 
 
     void delete(Integer idProducto);

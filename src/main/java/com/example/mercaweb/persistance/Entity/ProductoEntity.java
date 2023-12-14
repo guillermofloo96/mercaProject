@@ -24,5 +24,4 @@ public class ProductoEntity {
     private Double precio;
     @Column(name = "foto")
     private String foto;
-
 }

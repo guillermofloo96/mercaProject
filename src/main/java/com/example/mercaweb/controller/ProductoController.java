@@ -1,6 +1,6 @@
 package com.example.mercaweb.controller;
 
-import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.domain.service.IProductoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -21,7 +21,7 @@ public class ProductoController {
     retorna un httpcode ok con lista de prodcutos
      */
 @GetMapping
-    public ResponseEntity<List<ProductoPojo>> getAll(){
+    public ResponseEntity<List<ProductoDto>> getAll(){
         return ResponseEntity.status(HttpStatus.OK).body(iProductoService.getAll());
     }
 /*
@@ -29,7 +29,7 @@ devueve una marca coche
 
  */
     @GetMapping(path = "/{id}")
-    public ResponseEntity<ProductoPojo> getProducto(@PathVariable Integer id){
+    public ResponseEntity<ProductoDto> getProducto(@PathVariable Integer id){
     return ResponseEntity.of(iProductoService.getProducto(id));
 
 
@@ -43,7 +43,7 @@ devueve una marca coche
         Guarda un nuevo producto
  */
     @PostMapping
-    public ResponseEntity<ProductoPojo> save(@RequestBody  ProductoPojo prodcutoNew){
+    public ResponseEntity<ProductoDto> save(@RequestBody ProductoDto prodcutoNew){
 
         try{
             return ResponseEntity.status(HttpStatus.CREATED).body(iProductoService.save(prodcutoNew));
@@ -59,8 +59,9 @@ devueve una marca coche
     devuelve un
      */
     @PutMapping
-    public ResponseEntity<ProductoPojo> update(@RequestBody  ProductoPojo productoPojoUpdate){
-    return ResponseEntity.of(iProductoService.update(productoPojoUpdate));
+    public ResponseEntity<ProductoDto> update(@RequestBody ProductoDto productoDtoUpdate){
+    //return ResponseEntity.of(iProductoService.update(productoPojoUpdate));
+        return ResponseEntity.status(HttpStatus.OK).body(iProductoService.save(productoDtoUpdate));
     }
 
     /*

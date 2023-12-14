@@ -1,6 +1,6 @@
 package com.example.mercaweb.persistance.repository;
 
-import com.example.mercaweb.domain.Pojo.ProductoPojo;
+import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.domain.repository.IProductRepository;
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import com.example.mercaweb.persistance.Mapper.ProductoMapper;
@@ -23,12 +23,12 @@ public class ProductRepository implements IProductRepository {
     private final ProductoMapper productoMapper;
 
 @Override
-    public List<ProductoPojo> getAll() {
+    public List<ProductoDto> getAll() {
     return productoMapper.toProductoPojo(crudProductRepository.findAll());
 }
 
     @Override
-    public Optional<ProductoPojo> getProducto(Integer id) {
+    public Optional<ProductoDto> getProducto(Integer id) {
     return crudProductRepository.findById(id)
             .map(productoMapper::toproductoPojo);
 
@@ -43,8 +43,8 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public ProductoPojo save(ProductoPojo productoPojo) {
-        ProductoEntity productoEntity= productoMapper.productoEmtity(productoPojo);
+    public ProductoDto save(ProductoDto productoDto) {
+        ProductoEntity productoEntity= productoMapper.productoEmtity(productoDto);
         return productoMapper.toproductoPojo(crudProductRepository.save(productoEntity));
     }
 
