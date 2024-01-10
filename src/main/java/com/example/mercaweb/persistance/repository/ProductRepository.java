@@ -3,7 +3,6 @@ package com.example.mercaweb.persistance.repository;
 import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.domain.repository.IProductRepository;
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
-import com.example.mercaweb.persistance.Mapper.ProductoMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -20,17 +19,17 @@ public class ProductRepository implements IProductRepository {
     /*
  maper del pruducto
      */
-    private final ProductoMapper productoMapper;
+    private final com.example.mercaweb.persistance.Mapper.IProductoMapper IProductoMapper;
 
 @Override
     public List<ProductoDto> getAll() {
-    return productoMapper.toProductoPojo(crudProductRepository.findAll());
+    return IProductoMapper.toProductoPojo(crudProductRepository.findAll());
 }
 
     @Override
     public Optional<ProductoDto> getProducto(Integer id) {
     return crudProductRepository.findById(id)
-            .map(productoMapper::toproductoPojo);
+            .map(IProductoMapper::toproductoPojo);
 
     /*
     crudProductRepository.findById(id)
@@ -44,8 +43,8 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public ProductoDto save(ProductoDto productoDto) {
-        ProductoEntity productoEntity= productoMapper.productoEmtity(productoDto);
-        return productoMapper.toproductoPojo(crudProductRepository.save(productoEntity));
+        ProductoEntity productoEntity= IProductoMapper.productoEmtity(productoDto);
+        return IProductoMapper.toproductoPojo(crudProductRepository.save(productoEntity));
     }
 
 
