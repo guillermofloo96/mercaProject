@@ -2,7 +2,7 @@ package com.example.mercaweb.controller;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
 
-import com.example.mercaweb.domain.service.IProductoService;
+import com.example.mercaweb.domain.useCase.IProductoCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ import java.util.List;
 @RequestMapping(path ="/productos")
 public class ProductoController {
 
-    private final IProductoService iProductoService;
+    private final IProductoCase iProductoCase;
 
     /*
     Devuelve un listado de productos
@@ -23,7 +23,7 @@ public class ProductoController {
      */
 @GetMapping
     public ResponseEntity<List<ProductoDto>> getAll(){
-        return ResponseEntity.status(HttpStatus.OK).body(iProductoService.getAll());
+        return ResponseEntity.status(HttpStatus.OK).body(iProductoCase.getAll());
     }
 /*
 devueve una marca coche
@@ -31,7 +31,7 @@ devueve una marca coche
  */
     @GetMapping(path = "/{id}")
     public ResponseEntity<ProductoDto> getProducto(@PathVariable Integer id){
-    return ResponseEntity.of(iProductoService.getProducto(id));
+    return ResponseEntity.of(iProductoCase.getProducto(id));
 
 
     /*
@@ -47,7 +47,7 @@ devueve una marca coche
     public ResponseEntity<ProductoDto> save(@RequestBody  ProductoDto prodcutoNew){
 
         try{
-            return ResponseEntity.status(HttpStatus.CREATED).body(iProductoService.save(prodcutoNew));
+            return ResponseEntity.status(HttpStatus.CREATED).body(iProductoCase.save(prodcutoNew));
 
         }catch (Exception e){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
@@ -61,7 +61,7 @@ devueve una marca coche
      */
     @PatchMapping
     public ResponseEntity<ProductoDto> update(@RequestBody  ProductoDto productoPojoUpdate){
-    return ResponseEntity.of(iProductoService.update(productoPojoUpdate));
+    return ResponseEntity.of(iProductoCase.update(productoPojoUpdate));
     }
 
     /*
@@ -72,7 +72,7 @@ devueve una marca coche
      */
     @DeleteMapping(path = "/{id}")
     public ResponseEntity<Boolean> delete(@PathVariable Integer id){
-    return new ResponseEntity<>(this.iProductoService.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+    return new ResponseEntity<>(this.iProductoCase.delete(id) ? HttpStatus.OK : HttpStatus.NOT_FOUND);
 
     }
 

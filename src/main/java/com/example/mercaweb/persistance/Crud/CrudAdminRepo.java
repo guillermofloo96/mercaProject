@@ -1,4 +1,4 @@
-package com.example.mercaweb.persistance.repository;
+package com.example.mercaweb.persistance.Crud;
 
 import com.example.mercaweb.domain.dto.AdminDteo;
 import com.example.mercaweb.persistance.Entity.AdminEntity;

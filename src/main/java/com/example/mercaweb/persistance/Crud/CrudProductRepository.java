@@ -1,4 +1,4 @@
-package com.example.mercaweb.persistance.repository;
+package com.example.mercaweb.persistance.Crud;
 
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import org.springframework.data.jpa.repository.JpaRepository;

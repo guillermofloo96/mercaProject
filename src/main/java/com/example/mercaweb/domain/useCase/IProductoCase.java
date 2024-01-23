@@ -1,11 +1,11 @@
-package com.example.mercaweb.domain.service;
+package com.example.mercaweb.domain.useCase;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface IProductoService {
+public interface IProductoCase {
 
     List<ProductoDto> getAll();
 

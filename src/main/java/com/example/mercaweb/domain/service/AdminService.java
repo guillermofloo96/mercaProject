@@ -3,6 +3,8 @@ package com.example.mercaweb.domain.service;
 import com.example.mercaweb.domain.dto.AdminDteo;
 import com.example.mercaweb.domain.dto.ResponseAdminDto;
 import com.example.mercaweb.domain.repository.IAdminRepository;
+import com.example.mercaweb.domain.useCase.IAdminCase;
+import com.example.mercaweb.exeption.EmailValidationException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -16,12 +18,13 @@ import java.util.Optional;
  */
 @RequiredArgsConstructor
 @Service
-public class AdminService implements IAdminService{
+public class AdminService implements IAdminCase {
 
     private  final IAdminRepository iAdminRepository;
 
     @Override
     public List<AdminDteo> getAll() {
+
         return iAdminRepository.getAll();
     }
 
@@ -33,6 +36,7 @@ public class AdminService implements IAdminService{
 
     @Override
     public Optional<AdminDteo> getAdminByEmail(String email) {
+
         return iAdminRepository.getAdminByEmail(email);
     }
 
@@ -40,8 +44,13 @@ public class AdminService implements IAdminService{
 
     @Override
     public ResponseAdminDto save(AdminDteo adminDteo) {
+
+        if (!adminDteo.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" +
+                "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")){
+            throw new EmailValidationException();
+        }
         String paswordGenerated= generateRandomPasword(9);
-        adminDteo.setConsenia(paswordGenerated);
+        adminDteo.setContra(paswordGenerated);
         iAdminRepository.save(adminDteo);
 
         return  new ResponseAdminDto(paswordGenerated);

@@ -3,6 +3,7 @@ package com.example.mercaweb.domain.service;
 import com.example.mercaweb.domain.dto.ProductoDto;
 
 import com.example.mercaweb.domain.repository.IProductRepository;
+import com.example.mercaweb.domain.useCase.IProductoCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class ProductoService implements IProductoService{
+public class ProductoService implements IProductoCase {
 
     /*
     repository de Producto

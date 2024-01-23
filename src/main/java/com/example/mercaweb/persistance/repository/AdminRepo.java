@@ -1,9 +1,10 @@
 package com.example.mercaweb.persistance.repository;
 import com.example.mercaweb.domain.dto.AdminDteo;
 import com.example.mercaweb.domain.repository.IAdminRepository;
-import com.example.mercaweb.persistance.Entity.AdminEntity;
+
+import com.example.mercaweb.persistance.Crud.CrudAdminRepo;
 import com.example.mercaweb.persistance.Mapper.IAdminMapper;
-import lombok.AllArgsConstructor;
+
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -20,6 +21,7 @@ public class AdminRepo implements IAdminRepository {
     private  final IAdminMapper iAdminMapper;
     @Override
     public List<AdminDteo> getAll() {
+
         return iAdminMapper.adminDtolist(crudAdminRepo.findAll());
     }
 

@@ -10,11 +10,7 @@ public class AdminDteo {
     private int id;
     private String nombres;
     private  String usuarios;
-    private String consenia;
+    private String contra;
     private  String email;
-
-
-
-
 
 }

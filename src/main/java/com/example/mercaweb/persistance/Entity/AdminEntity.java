@@ -13,11 +13,12 @@ public class AdminEntity{
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
+        private int     id;
         private String nombres;
         @Column(name ="usuario")
         private  String usuarios;
-        private String consenia;
+        @Column(name ="contrasenia")
+        private String contra;
         @Column(name ="correo")
         private  String email;
 

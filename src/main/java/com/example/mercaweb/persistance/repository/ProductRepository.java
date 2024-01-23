@@ -2,6 +2,7 @@ package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.domain.repository.IProductRepository;
+import com.example.mercaweb.persistance.Crud.CrudProductRepository;
 import com.example.mercaweb.persistance.Entity.ProductoEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -1,7 +1,6 @@
-package com.example.mercaweb.domain.service;
+package com.example.mercaweb.domain.useCase;
 
 import com.example.mercaweb.domain.dto.AdminDteo;
-import com.example.mercaweb.domain.dto.ProductoDto;
 import com.example.mercaweb.domain.dto.ResponseAdminDto;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.Optional;
 /**
  * interfaz de servicio administradores
  */
-public interface IAdminService {
+public interface IAdminCase {
 
     /**
      * devuelve listas de todos los administradores
