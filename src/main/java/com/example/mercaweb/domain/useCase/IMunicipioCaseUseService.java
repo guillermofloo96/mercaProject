@@ -12,6 +12,7 @@ public interface IMunicipioCaseUseService {
 
     Optional<MunicipioDto> getMunicipioDto(Integer id);
     MunicipioDto save(MunicipioDto municipioDto);
+    List<MunicipioDto> getByDepto(Integer id);
 
     Optional<MunicipioDto> update(MunicipioDto municipioDto);
 

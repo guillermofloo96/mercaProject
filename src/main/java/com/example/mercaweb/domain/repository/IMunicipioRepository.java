@@ -12,7 +12,7 @@ public interface IMunicipioRepository {
 
     Optional<MunicipioDto> getMunicipioDto(Integer id);
 
-    List<MunicipioDto> getByDepto(Integer id);
+    List<MunicipioDto> getMunicipioEntityById(Integer id);
     MunicipioDto save(MunicipioDto municipioDto);
 
 

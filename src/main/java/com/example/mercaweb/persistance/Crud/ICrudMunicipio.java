@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface ICrudMunicipio  extends JpaRepository<MunicipioEntity, Integer> {
 
-    List<MunicipioEntity> findMunicipioEntityById(Integer id);
+    List<MunicipioEntity> findAllByDeptokeyIs(Integer id);
 }

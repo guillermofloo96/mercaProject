@@ -32,8 +32,8 @@ public class MunicipioRepository implements IMunicipioRepository {
     }
 
     @Override
-    public List<MunicipioDto> getByDepto(Integer id) {
-        return iMunicipioMapper.MUNICIPIO_DTO_LIST(iCrudMunicipio.findMunicipioEntityById(id));
+    public List<MunicipioDto> getMunicipioEntityById(Integer id) {
+        return iMunicipioMapper.MUNICIPIO_DTO_LIST(iCrudMunicipio.findAllByDeptokeyIs(id));
     }
 
     @Override
