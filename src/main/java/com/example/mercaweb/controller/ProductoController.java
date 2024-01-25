@@ -1,7 +1,6 @@
 package com.example.mercaweb.controller;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
-
 import com.example.mercaweb.domain.useCase.IProductoCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

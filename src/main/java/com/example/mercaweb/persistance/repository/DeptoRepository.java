@@ -1,8 +1,7 @@
 package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.dto.DeptoDto;
-import com.example.mercaweb.domain.repository.IDeptoRepository;
-import com.example.mercaweb.persistance.Crud.CrudAdminRepo;
+import com.example.mercaweb.domain.irepository.IDeptoRepository;
 import com.example.mercaweb.persistance.Crud.CrudDeptoRepo;
 import com.example.mercaweb.persistance.Mapper.IDeptoMapper;
 import lombok.RequiredArgsConstructor;

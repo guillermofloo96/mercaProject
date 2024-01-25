@@ -1,7 +1,7 @@
 package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.dto.MunicipioDto;
-import com.example.mercaweb.domain.repository.IMunicipioRepository;
+import com.example.mercaweb.domain.irepository.IMunicipioRepository;
 import com.example.mercaweb.domain.useCase.IMunicipioCaseUseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

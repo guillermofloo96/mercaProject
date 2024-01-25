@@ -2,7 +2,7 @@ package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.dto.AdminDteo;
 import com.example.mercaweb.domain.dto.ResponseAdminDto;
-import com.example.mercaweb.domain.repository.IAdminRepository;
+import com.example.mercaweb.domain.irepository.IAdminRepository;
 import com.example.mercaweb.domain.useCase.IAdminCase;
 import com.example.mercaweb.exeption.EmailValidationException;
 import lombok.RequiredArgsConstructor;

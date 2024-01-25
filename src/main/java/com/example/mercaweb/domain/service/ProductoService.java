@@ -2,7 +2,7 @@ package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
 
-import com.example.mercaweb.domain.repository.IProductRepository;
+import com.example.mercaweb.domain.irepository.IProductRepository;
 import com.example.mercaweb.domain.useCase.IProductoCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

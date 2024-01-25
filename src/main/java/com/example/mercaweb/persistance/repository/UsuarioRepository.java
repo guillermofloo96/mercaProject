@@ -1,10 +1,8 @@
 package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.dto.UsuarioDto;
-import com.example.mercaweb.domain.repository.IUsuarioRepository;
-import com.example.mercaweb.persistance.Crud.ICrudMunicipio;
+import com.example.mercaweb.domain.irepository.IUsuarioRepository;
 import com.example.mercaweb.persistance.Crud.ICrudUsuario;
-import com.example.mercaweb.persistance.Mapper.IMunicipioMapper;
 import com.example.mercaweb.persistance.Mapper.IUsuarioMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

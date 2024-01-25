@@ -7,28 +7,26 @@ import lombok.Setter;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *ENTIDAD DE PRODUCTO
- */
 @Setter
 @Getter
 @Entity
-
-@Table(name="producto")
-public class ProductoEntity {
+@Table(name = "tienda")
+public class TiendaEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "nombres")
-    private String nombres;
-    @Column(name = "descripcion")
-    private String descripcion;
-    @Column(name = "precio")
-    private Double precio;
-    @Column(name = "foto")
-    private String foto;
 
-    @OneToMany(mappedBy = "productoEntity", orphanRemoval = true)
+    private String nombre;
+    private String descripcion;
+    private String logo;
+    @Column(name = "mercadoid")
+    private  Integer mercadokey;
+
+    @ManyToOne
+    @JoinColumn(name = "mercadoid",insertable=false, updatable = false)
+    private MercadoEntity mercadoEntity;
+
+    @OneToMany(mappedBy = "tiendaEntity", orphanRemoval = true)
     private List<DetProdcutoEntity> detProdcutoEntities = new ArrayList<>();
 
 }

@@ -1,6 +1,5 @@
-package com.example.mercaweb.domain.repository;
+package com.example.mercaweb.domain.irepository;
 
-import com.example.mercaweb.domain.dto.MunicipioDto;
 import com.example.mercaweb.domain.dto.UsuarioDto;
 
 import java.util.List;

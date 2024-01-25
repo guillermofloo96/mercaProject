@@ -1,4 +1,4 @@
-package com.example.mercaweb.domain.repository;
+package com.example.mercaweb.domain.irepository;
 
 import com.example.mercaweb.domain.dto.ProductoDto;
 

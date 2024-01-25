@@ -1,6 +1,6 @@
 package com.example.mercaweb.controller;
 
-import com.example.mercaweb.domain.dto.DeptoDto;
+
 import com.example.mercaweb.domain.dto.MunicipioDto;
 import com.example.mercaweb.domain.useCase.IMunicipioCaseUseService;
 import lombok.RequiredArgsConstructor;

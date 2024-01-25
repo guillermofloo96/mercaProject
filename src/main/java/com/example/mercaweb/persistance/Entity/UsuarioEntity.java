@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Setter@Getter
 @RequiredArgsConstructor
@@ -19,10 +22,14 @@ public class UsuarioEntity {
 
 
     private Integer id;
-    @Column(columnDefinition = "nombres")
+    @Column(name = "nombres")
     private String names;
-    @Column(columnDefinition = "correo")
+    @Column(name= "correo")
     private String email;
-    @Column(columnDefinition = "activo")
+    @Column(name = "activo")
     private Boolean active;
+
+    @OneToMany(mappedBy = "usuarioEntity", orphanRemoval = true)
+    private List<PresupuestoEntity> presupuestoEntities = new ArrayList<>();
+
 }

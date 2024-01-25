@@ -1,8 +1,7 @@
 package com.example.mercaweb.domain.service;
 
 import com.example.mercaweb.domain.dto.UsuarioDto;
-import com.example.mercaweb.domain.repository.IMunicipioRepository;
-import com.example.mercaweb.domain.repository.IUsuarioRepository;
+import com.example.mercaweb.domain.irepository.IUsuarioRepository;
 import com.example.mercaweb.domain.useCase.IUsuarioCaseUseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -28,6 +27,15 @@ public class UsuarioService implements IUsuarioCaseUseService {
     @Override
     public UsuarioDto save(UsuarioDto usuarioDto) {
         return iUsuarioRepository.save(usuarioDto);
+    }
+
+    @Override
+    public Optional<UsuarioDto> update(UsuarioDto usuarioDto) {
+        if(iUsuarioRepository.getUsuarioById(usuarioDto.getId()).isEmpty()){
+            return Optional.empty();
+        }
+        return Optional.of(iUsuarioRepository.save(usuarioDto));
+
     }
 
     @Override

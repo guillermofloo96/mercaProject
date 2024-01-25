@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @Entity
@@ -24,5 +27,8 @@ public class MunicipioEntity {
     @ManyToOne
     @JoinColumn(name = "deptoid", insertable=false, updatable = false)
     private DeptoEntity deptoEntity;
+
+    @OneToMany(mappedBy = "municipioEntity", orphanRemoval = true)
+    private List<MercadoEntity> mercadoEntities;
 
 }

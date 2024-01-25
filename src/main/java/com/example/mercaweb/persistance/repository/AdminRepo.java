@@ -1,6 +1,6 @@
 package com.example.mercaweb.persistance.repository;
 import com.example.mercaweb.domain.dto.AdminDteo;
-import com.example.mercaweb.domain.repository.IAdminRepository;
+import com.example.mercaweb.domain.irepository.IAdminRepository;
 
 import com.example.mercaweb.persistance.Crud.CrudAdminRepo;
 import com.example.mercaweb.persistance.Mapper.IAdminMapper;

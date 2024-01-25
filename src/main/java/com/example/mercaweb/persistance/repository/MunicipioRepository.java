@@ -1,7 +1,7 @@
 package com.example.mercaweb.persistance.repository;
 
 import com.example.mercaweb.domain.dto.MunicipioDto;
-import com.example.mercaweb.domain.repository.IMunicipioRepository;
+import com.example.mercaweb.domain.irepository.IMunicipioRepository;
 
 import com.example.mercaweb.persistance.Crud.ICrudMunicipio;
 
