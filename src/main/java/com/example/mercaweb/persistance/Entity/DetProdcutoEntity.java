@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @Entity
@@ -22,11 +25,14 @@ public class DetProdcutoEntity {
     private  String categoria;
 
     @ManyToOne
-    @JoinColumn(name = "productoid")
+    @JoinColumn(name = "productoid",insertable=false, updatable = false)
     private ProductoEntity productoEntity;
 
     @ManyToOne
-    @JoinColumn(name = "tiendaid")
+    @JoinColumn(name = "tiendaid",insertable=false, updatable = false)
     private TiendaEntity tiendaEntity;
+
+    @OneToMany(mappedBy = "detProdcutoEntity", orphanRemoval = true)
+    private List<DetPresupEntity> detPresupEntities = new ArrayList<>();
 
 }

@@ -4,7 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Setter
 @Getter
@@ -21,10 +23,13 @@ public class PresupuestoEntity {
     private String DetPresupuesto;
     @Column(name = "usuariid")
     private Integer usuariokey;
-    private Date fecha;
+    private String fecha;
 
     @ManyToOne
     @JoinColumn(name = "usuariid",insertable=false, updatable = false)
     private UsuarioEntity usuarioEntity;
+
+    @OneToMany(mappedBy = "presupuestoEntity", orphanRemoval = true)
+    private List<DetPresupEntity> detPresupEntities = new ArrayList<>();
 
 }

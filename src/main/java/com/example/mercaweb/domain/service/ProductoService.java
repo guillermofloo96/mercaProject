@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
-public class ProductoService implements IProductoCase {
+public class  ProductoService implements IProductoCase {
 
     /*
     repository de Producto

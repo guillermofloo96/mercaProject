@@ -14,6 +14,6 @@ public class PresupuestoDto {
     //el detalle para que es el presupuesto.
     private String DetPresupuesto;
     private Integer usuariokey;
-    private Date fecha;
+    private String fecha;
 
 }

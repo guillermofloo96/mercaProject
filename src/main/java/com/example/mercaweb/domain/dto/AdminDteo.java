@@ -9,8 +9,9 @@ public class AdminDteo {
 
     private int id;
     private String nombres;
-    private  String usuarios;
     private String contra;
     private  String email;
+    private String rol;
+    private Boolean active;
 
 }

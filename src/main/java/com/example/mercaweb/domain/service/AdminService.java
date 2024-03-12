@@ -4,7 +4,9 @@ import com.example.mercaweb.domain.dto.AdminDteo;
 import com.example.mercaweb.domain.dto.ResponseAdminDto;
 import com.example.mercaweb.domain.irepository.IAdminRepository;
 import com.example.mercaweb.domain.useCase.IAdminCase;
-import com.example.mercaweb.exeption.EmailValidationException;
+import com.example.mercaweb.exception.CustomerExistsException;
+import com.example.mercaweb.exception.EmailValidationException;
+import com.example.mercaweb.security.Roles;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -44,14 +46,23 @@ public class AdminService implements IAdminCase {
 
     @Override
     public ResponseAdminDto save(AdminDteo adminDteo) {
+        System.out.println(adminDteo);
 
         if (!adminDteo.getEmail().matches("^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" +
                 "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$")){
             throw new EmailValidationException();
         }
+
+        if(getAdmin(adminDteo.getId()).isPresent()){
+            throw new CustomerExistsException();
+        }
         String paswordGenerated= generateRandomPasword(9);
         adminDteo.setContra(paswordGenerated);
+        //adminDteo.setRol(Roles.Admin);
+        adminDteo.setActive(true);
+
         iAdminRepository.save(adminDteo);
+
 
         return  new ResponseAdminDto(paswordGenerated);
     }
